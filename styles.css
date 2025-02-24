@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+/* Global font settings */
+body {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
 /* Wrapper to center content and limit width */
 .wrapper {
     max-width: 400px;
