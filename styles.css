@@ -23,6 +23,7 @@ body {
 /* Grid layout for text and images */
 .grid-container {
     display: grid;
+    max-width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: center;
