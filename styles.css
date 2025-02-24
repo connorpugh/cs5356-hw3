@@ -1,9 +1,21 @@
-/* styles.css */
-body {
-    text-align: center;
+/* Apply a basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Ensure the container fills the width of the viewport and centers text */
+.container {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Make the image responsive and centered */
 .centered-image {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
