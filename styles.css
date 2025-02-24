@@ -19,6 +19,7 @@
 .text-content {
     padding: 20px;
     text-align: left;
+    width: 100%;
 }
 
 /* Image container */
