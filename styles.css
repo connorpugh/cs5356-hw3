@@ -1,4 +1,4 @@
-/* Reset margin and padding */
+/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -8,45 +8,45 @@
 /* Grid layout for text and images */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Ensure equal width split */
-    gap: 20px; /* Space between columns */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     align-items: center;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     padding: 20px;
 }
 
-/* Style for the text section */
+/* Text section */
 .text-content {
     padding: 20px;
-    text-align: left; /* Align text to the left for better readability */
+    text-align: left;
 }
 
-/* Image container for stacking images */
+/* Image container */
 .image-container {
     display: flex;
-    flex-direction: column; /* Stack images vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 15px; /* Space between images */
-    width: 100%; /* Ensure it doesn’t exceed its grid column */
+    gap: 15px;
+    width: 100%;
 }
 
-/* Ensure images take only 100% of their parent container */
+/* Images */
 .centered-image {
-    max-width: 100%; /* Ensures image never exceeds its column width */
+    max-width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect: Slight scaling and rotation */
+/* Hover effect */
 .centered-image:hover {
-    transform: scale(1.05) rotate(2deg); /* Slightly grow and tilt */
+    transform: scale(1.05) rotate(2deg);
 }
 
-/* Responsive design: Stack into a single column on small screens */
+/* Stack into one column if the screen is too small */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Switch to single-column layout */
+        grid-template-columns: 1fr;
     }
 
     .text-content, .image-container {
