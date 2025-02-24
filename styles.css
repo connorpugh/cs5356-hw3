@@ -7,7 +7,7 @@
 
 /* Wrapper to center content and limit width */
 .wrapper {
-    max-width: 1200px;
+    max-width: 900px;
     width: 90%;
     margin: 0 auto;
 }
