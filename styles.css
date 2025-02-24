@@ -8,7 +8,7 @@
 /* Grid layout for text and images */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; /* Ensure equal width split */
     gap: 20px; /* Space between columns */
     align-items: center;
     min-height: 100vh; /* Full viewport height */
@@ -17,8 +17,8 @@
 
 /* Style for the text section */
 .text-content {
-    text-align: center;
     padding: 20px;
+    text-align: left; /* Align text to the left for better readability */
 }
 
 /* Image container for stacking images */
@@ -27,18 +27,29 @@
     flex-direction: column; /* Stack images vertically */
     align-items: center;
     gap: 15px; /* Space between images */
+    width: 100%; /* Ensure it doesn’t exceed its grid column */
 }
 
-/* Make images responsive */
-.responsive-image {
-    max-width: 100%;
+/* Ensure images take only 100% of their parent container */
+.centered-image {
+    max-width: 100%; /* Ensures image never exceeds its column width */
     height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
 }
 
-/* Responsive design: Switch to single column on small screens */
+/* Hover effect: Slight scaling and rotation */
+.centered-image:hover {
+    transform: scale(1.05) rotate(2deg); /* Slightly grow and tilt */
+}
+
+/* Responsive design: Stack into a single column on small screens */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stack content into a single column */
+        grid-template-columns: 1fr; /* Switch to single-column layout */
+    }
+
+    .text-content, .image-container {
         text-align: center;
     }
 }
