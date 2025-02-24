@@ -1,21 +1,44 @@
-/* Apply a basic reset for margins and paddings */
+/* Reset margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ensure the container fills the width of the viewport and centers text */
-.container {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
+/* Grid layout for text and images */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px;
 }
 
-/* Make the image responsive and centered */
-.centered-image {
+/* Style for the text section */
+.text-content {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Image container for stacking images */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+    gap: 15px; /* Space between images */
+}
+
+/* Make images responsive */
+.responsive-image {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+}
+
+/* Responsive design: Switch to single column on small screens */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack content into a single column */
+        text-align: center;
+    }
 }
