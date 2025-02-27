@@ -83,5 +83,6 @@ body {
 
 /* Summary text for detail sections */
 summary {
-    font-weight: bold;
+    font-weight: 700 !important;
 }
+
