@@ -43,4 +43,28 @@
     </details>
 </div>
 </body>
+<script>
+    // JavaScript code to fetch the randomized noise image and make it into a background
+    const tiles = 50;
+    const tileSize = 7;
+    const borderWidth = 0;
+    const mode = 'B';
+    const url = `https://php-noise.com/noise.php?r=170&g=100&b=250&tiles=${tiles}&tileSize=${tileSize}&borderWidth=${borderWidth}&mode=${mode}&json`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const imageUrl = data.uri;
+            document.body.style.backgroundImage = `url(${imageUrl})`;
+            document.body.style.backgroundSize = 'cover';
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+</script>
 </html>
