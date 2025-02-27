@@ -28,6 +28,7 @@
         </div>
     </div>
     <h2>About This Website</h2>
+    <button id="expand-all">Expand All</button>
     <details>
         <summary>CSS</summary>
         <p>For my unique CSS element, I used the transition property to make it so that when you hover over the images, it transitions into an increased size & different rotation, rather than instantly being set to it. You can choose the transition time and smoothing function - I chose a 0.3 second transition using the ease-in-out function.</p>
@@ -44,6 +45,10 @@
     <details>
         <summary>Rich Preview</summary>
         This website has a Rich Preview! It is confirmed to work on iMessage, Slack and Discord.
+    </details>
+    <details>
+        <summary>Additional Interactions</summary>
+        Using MouseEvents, the "Expand All" button at the top expands all detail elements, and changes to "Close ALl" if they are all open.
     </details>
 </div>
 </body>
@@ -70,5 +75,21 @@
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+</script>
+<script>
+    document.getElementById("expand-all").addEventListener("click", function() {
+        const details = document.querySelectorAll("details");
+        const allOpen = Array.from(details).every(detail => detail.open);
+
+        if (allOpen) {
+            // If all are open, close them and change the button text
+            details.forEach(detail => detail.open = false);
+            this.textContent = "Expand All";
+        } else {
+            // If not all are open, open them and change the button text
+            details.forEach(detail => detail.open = true);
+            this.textContent = "Close All";
+        }
+    });
 </script>
 </html>
