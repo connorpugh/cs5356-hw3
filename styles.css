@@ -80,3 +80,8 @@ body {
         text-align: center;
     }
 }
+
+/* Summary text for detail sections */
+summary {
+    font-weight: bold;
+}
