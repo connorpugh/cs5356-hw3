@@ -60,13 +60,15 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 /* Hover effect */
 .centered-image:hover {
     transform: scale(1.05) rotate(2deg);
+    filter: brightness(80%) contrast(120%);
 }
+
 
 /* Stack into one column if the screen is too small */
 @media (max-width: 768px) {
